@@ -4,6 +4,7 @@
 
 <div id="products">
   <% @products.each do |product| %>
+    <%# <%= image_tag product.image %> %>
     <%= render product %>
     <p>
       <%= link_to "Show this product", product %>

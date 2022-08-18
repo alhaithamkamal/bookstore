@@ -6,7 +6,7 @@
 
   <p>
     <strong>Image:</strong>
-    <%= product.image %>
+    <%= image_tag(product.image) unless product.image.blank? %>
   </p>
 
   <p>
