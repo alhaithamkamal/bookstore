@@ -33,7 +33,7 @@
             <form class="button_to" method="post" action="<%= product_path(product)%>" style="display: inline">
                <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
               <input type="hidden" name="_method" value="delete" autocomplete="off">
-              <button class="delete-product" type="submit" style="border: none;" title="Delete"><i class="fa-solid fa-trash text-danger"></i></button>
+              <button class="delete-product" type="submit" style="border: none; background-color: transparent;" title="Delete"><i class="fa-solid fa-trash text-danger"></i></button>
             </form>
           </td>
         </tr>

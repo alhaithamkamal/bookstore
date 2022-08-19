@@ -12,7 +12,7 @@
       </ul>
        <% if Current.user %>
           Logged in as: <%= Current.user.name %><br>
-          <%= button_to 'Logout', logout_path, method: :delete , class: 'btn btn-light mx-2' %>
+          <%= button_to raw('Logout <i class="fa-solid fa-arrow-right-from-bracket"></i>'), logout_path, method: :delete , class: 'btn btn-light mx-2  text-danger' %>
           <% else %>
           <%= link_to 'Login', sign_in_path, class: 'btn btn-light' %>
       <% end %>
