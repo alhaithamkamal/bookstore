@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
     has_one_attached :image
     belongs_to :admin, optional: true
-    validates :name, :price, :description, presence: true
+    validates :name, :price, :description, :image, presence: true
     validates :price, numericality: { greater_than_or_equal_to: 0 }
     validate :acceptable_image
 
