@@ -1,14 +1,62 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
+<%= link_to "New product", new_product_path, class: "btn btn-primary m-3" %>
 
 <div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Updated At</th>
+        <th scope="col">Admin</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <th scope="row"> <%= product.id %></th>
+          <td> <%= image_tag(product.image, class: 'img-fluid', style: 'max-width: 50px; object-fit:contain;') unless product.image.blank? %> </td>
+          <td><%= product.name %></td>
+          <td>$<%= product.price %></td>
+          <td><%= I18n.l(product.created_at, format: :short) %></td>
+          <td><%= I18n.l(product.updated_at, format: :short) %></td>
+          <td><a href="#"><%= product.admin.name unless product.admin.nil? %><a></td>
+          <td>
+            <a href="<%= product_path(product)%>" title="Show"><i class="fa-solid fa-eye"></i></a> |
+            <a href="<%=edit_product_path(product)%>" title="Edit"><i class="fa-solid fa-pen-to-square text-warning"></i></a> |
+            <form class="button_to" method="post" action="<%= product_path(product)%>" style="display: inline">
+               <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+              <input type="hidden" name="_method" value="delete" autocomplete="off">
+              <button class="delete-product" type="submit" style="border: none;" title="Delete"><i class="fa-solid fa-trash text-danger"></i></button>
+            </form>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<%= link_to "New product", new_product_path %>
+<script>
+$('.delete-product').click(function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $(this).parent().submit();
+            }
+        })
+    })
+</script>

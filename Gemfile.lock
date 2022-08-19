@@ -191,6 +191,7 @@ GEM
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     strscan (3.0.4)
+    sweetalert2-rails (0.1.1)
     thor (1.2.1)
     timeout (0.3.0)
     turbo-rails (1.1.1)
@@ -235,6 +236,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  sweetalert2-rails
   turbo-rails
   tzinfo-data (~> 1.2021, >= 1.2021.5)
   web-console

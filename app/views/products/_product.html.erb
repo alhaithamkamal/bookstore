@@ -19,4 +19,9 @@
     <%= product.description %>
   </p>
 
+  <p>
+    <strong>Admin:</strong>
+    <%= product.admin.name unless product.admin.blank? %>
+  </p>
+
 </div>

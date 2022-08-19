@@ -21,6 +21,6 @@ class Product < ApplicationRecord
     before_save :set_current_user
 
     def set_current_user 
-
+        self.admin = Current.user
     end
 end
