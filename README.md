@@ -19,4 +19,6 @@ Things you may want to cover:
 * Database initialization
 >rake  db:migrate db:seed
 
-* ...
+* Admin Credentials
+>email:admin@example.com,
+>password: password
