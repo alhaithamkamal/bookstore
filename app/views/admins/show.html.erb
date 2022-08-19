@@ -2,12 +2,11 @@
 
 <div class="row">
     <div class="col-sm-3"></div>
-    <div class="col-md-6">
-      <%= render @product %>
+    <div class="col-md-6 mt-3">
+      <h3 class="my-3">Amin Information</h3>
+      <%= render @admin %>
       <div>
-        <%= link_to "Edit this product", edit_product_path(@product) %> |
         <%= link_to "Back to products", products_path %>
       </div>
     </div>
 </div>
-

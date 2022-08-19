@@ -1,0 +1,21 @@
+<div id="<%= dom_id admin %>" class="container">
+    <p>
+    <strong>Name:</strong>
+    <%= admin.name %>
+    </p>
+
+    <p>
+    <strong>email:</strong>
+    <%= admin.email %>
+    </p>
+
+    <p>
+    <strong>Created at:</strong>
+    <%= I18n.l(admin.created_at, format: :long) %>
+    </p>
+
+    <p>
+    <strong>Updated at:</strong>
+    <%= I18n.l(admin.updated_at, format: :long) %>
+    </p>
+</div>

@@ -26,7 +26,7 @@
           <td>$<%= product.price %></td>
           <td><%= I18n.l(product.created_at, format: :short) %></td>
           <td><%= I18n.l(product.updated_at, format: :short) %></td>
-          <td><a href="#"><%= product.admin.name unless product.admin.nil? %><a></td>
+          <td><a href="<%= admin_path(product.admin)%>"><%= product.admin.name unless product.admin.nil? %><a></td>
           <td>
             <a href="<%= product_path(product)%>" title="Show"><i class="fa-solid fa-eye"></i></a> |
             <a href="<%=edit_product_path(product)%>" title="Edit"><i class="fa-solid fa-pen-to-square text-warning"></i></a> |
