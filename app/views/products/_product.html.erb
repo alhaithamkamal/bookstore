@@ -1,27 +1,35 @@
-<div id="<%= dom_id product %>">
-  <p>
-    <strong>Name:</strong>
-    <%= product.name %>
-  </p>
+<div id="<%= dom_id product %>" class="container">
+      <p>
+        <strong>Name:</strong>
+        <%= product.name %>
+      </p>
 
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag(product.image) unless product.image.blank? %>
-  </p>
+      <p>
+        <%= image_tag(product.image, class: "img-fluid") unless product.image.blank? %>
+      </p>
 
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
+      <p>
+        <strong>Price:</strong>
+        <%= product.price %>
+      </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
+      <p>
+        <strong>Description:</strong>
+        <%= product.description %>
+      </p>
 
-  <p>
-    <strong>Admin:</strong>
-    <%= product.admin.name unless product.admin.blank? %>
-  </p>
+      <p>
+        <strong>Admin:</strong>
+        <%= product.admin.name unless product.admin.blank? %>
+      </p>
 
+      <p>
+        <strong>Created at:</strong>
+        <%= I18n.l(product.created_at, format: :long) %>
+      </p>
+
+      <p>
+        <strong>Updated at:</strong>
+        <%= I18n.l(product.updated_at, format: :long) %>
+      </p>
 </div>
